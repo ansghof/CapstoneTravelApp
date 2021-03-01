@@ -1,0 +1,79 @@
+#trips-area {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  width: 80%;
+  color: white;
+  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+  .trip {
+    padding-left: 40px;
+    .trip-destination-background {
+      padding: 10px;
+      width: 700px;
+      height: 300px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 4px;
+      .trip-destination {
+        font-size: 30px;
+      }
+      .weatherIcon {
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.add-button {
+  box-shadow: inset 0px 1px 6px 3px #caefab;
+  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+  background-color: #77d42a;
+  border-radius: 6px;
+  border: 1px solid #268a16;
+  display: inline-block;
+  cursor: pointer;
+  color: #306108;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #aade7c;
+  &:hover {
+    background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+    background-color: #5cb811;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+.remove-button {
+  box-shadow: inset 0px 1px 0px 0px #f29c93;
+  background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+  background-color: #fe1a00;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+  &:hover {
+    background: linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+    background-color: #ce0100;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}

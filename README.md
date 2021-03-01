@@ -5,4 +5,5 @@ This app will send your link to an API to analyze the contents and will display 
 ## Get Up and Running
 
 blabla
+
 # CapstoneTravelApp
