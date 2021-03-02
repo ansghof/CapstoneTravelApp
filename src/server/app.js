@@ -25,11 +25,6 @@ app.get("/", function(req, res) {
   res.sendFile("dist/index.html");
 });
 
-// designates what port the app will listen to for incoming requests
-app.listen(8081, function() {
-  console.log("Server listening on port 8081!");
-});
-
 app.get("/weatherdata", async function(req, res) {
   console.log("::GET weatherdata::");
 
@@ -65,16 +60,14 @@ app.get("/cityimage", async function(req, res) {
 app.post("/trip", async function(req, res) {
   console.log("::POST Trip::");
   tripList.push(req.body);
-  console.log(tripList);
   res.status = 200;
   res.send({
     result: JSON.stringify(tripList)
   });
 });
 
-app.get("/trips", async function(req, res) {
+app.get("/trips", function(req, res) {
   console.log("::GET Trips::");
-  console.log(tripList);
   res.status = 200;
   res.send({
     result: JSON.stringify(tripList)
@@ -83,20 +76,21 @@ app.get("/trips", async function(req, res) {
 
 app.delete("/trip", async function(req, res) {
   console.log("::Delete Trip::");
-  console.log(tripList.length);
   const idForDeletion = req.query.id;
   if (idForDeletion > tripList.length) {
     res.status = 404;
+    res.statusCode = 404;
     console.log(
       "index not found in trip list. Prey to the deity of your choice and retry."
     );
   } else {
     tripList.splice(req.query.id, 1);
     res.status = 200;
+    res.statusCode = 200;
   }
-  console.log(tripList.length);
-  console.log(tripList);
   res.send({
     result: JSON.stringify(tripList)
   });
 });
+
+module.exports = app;

@@ -1,4 +1,4 @@
-import { isValidDate } from "../src/client/js/isValidDate";
+import { isValidDate } from "../../src/client/js/isValidDate";
 
 const validDate = "2022-12-31";
 const pastDate = "1999-12-31";

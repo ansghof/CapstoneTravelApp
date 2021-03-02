@@ -1,4 +1,4 @@
-import { Trip } from "../src/client/js/Trip";
+import { Trip } from "../../src/client/js/Trip";
 
 const fourDays = 1000 * 60 * 60 * 24 * 4;
 
