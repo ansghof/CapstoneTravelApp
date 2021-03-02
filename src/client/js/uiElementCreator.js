@@ -1,11 +1,10 @@
 export { createResultElement };
 import { Trip } from "./Trip.js";
-import { persistTrip, deleteTrip } from "./serverCommunication";
+import { persistTrip, deleteTrip, loadTripList } from "./serverCommunication";
 import { getCurrentTrip } from "./formHandler";
 import "regenerator-runtime/runtime";
 
 // this function creates one UI-element for a trip and adds it to the dom.
-// todo: add event handler for add or delete.
 function createResultElement(trip, existing, id) {
   // get rid of an existing search result if something new was searched.
   if (!existing && document.getElementById("result") !== null) {
@@ -131,8 +130,7 @@ function rebuildTripsUiSection(trips) {
 
 window.addEventListener("load", async event => {
   console.log("delete all, load from scratch");
-  const tripList = await fetch("http://localhost:8081/trips");
-  const json = await tripList.json();
+  const json = await loadTripList();
   let trips = json.result;
   console.log(trips);
   trips = JSON.parse(trips);

@@ -1,44 +1,14 @@
 import { isValidDate } from "./isValidDate";
 import { createResultElement } from "./uiElementCreator";
 import { Trip } from "./Trip.js";
+import { getWeatherData, getCityImageData } from "./serverCommunication";
+
 export { handleSubmit, getCurrentTrip };
 
 const spinner = document.getElementById("spinner");
 
 let currentTrip;
 let tripList = [];
-
-async function getWeatherData(data) {
-  console.log("::in getWeatherData::");
-  console.log(data.city);
-  const response = await fetch(
-    "http://localhost:8081/weatherdata?city=" + encodeURIComponent(data.city),
-    {
-      method: "GET",
-      credentials: "same-origin",
-      mode: "cors"
-    }
-  );
-  const json = response.json();
-
-  return json;
-}
-
-async function getCityImageData(data) {
-  console.log("::in getCityImageData::");
-  console.log(data);
-  const response = await fetch(
-    "http://localhost:8081/cityimage?city=" + encodeURIComponent(data.city),
-    {
-      method: "GET",
-      credentials: "same-origin",
-      mode: "cors"
-    }
-  );
-  const json = response.json();
-
-  return json;
-}
 
 async function persistTrip(event) {
   console.log("::persisting trip::");
@@ -47,7 +17,6 @@ async function persistTrip(event) {
 async function handleSubmit(event) {
   console.log("::in handleSubmit::");
   event.preventDefault();
-  // resultText.innerHTML = "";
   let startDate = document.getElementById("start-date").value;
   let destination = document.getElementById("destination").value;
   console.log(destination);
@@ -68,7 +37,6 @@ async function handleSubmit(event) {
   currentTrip = newTrip;
 
   spinner.style.visibility = "hidden";
-  //todo: remove old current trip from ui to replace it by the new one.
   createResultElement(currentTrip, false);
 }
 
