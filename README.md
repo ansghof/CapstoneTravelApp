@@ -33,7 +33,7 @@ The client is the webpage which is used to plan trips.
 #### Startup
 
 The client can be started from the dev server using `npm run build-dev`. It will automatically start the browser and load the page. Make sure the server
-is running. If the server doesn't run, CORS errors will show up in the browser's dev tools.
+is running. If the server doesn't run, CORS errors will show up in the browser's dev tools. If the browser doesn't open, the dev-server usually [runs here](http://127.0.0.1:8080).
 
 ## Tests
 
