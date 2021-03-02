@@ -87,7 +87,7 @@ async function addTrip(event) {
   let tripList = await persistTrip(getCurrentTrip());
   let trips = tripList.result;
   trips = JSON.parse(trips);
-  rebuildTripsUiSection(trips);
+  rebuildTripsUiSection(trips, true);
 }
 
 async function removeTrip(event) {
@@ -96,7 +96,7 @@ async function removeTrip(event) {
   let tripList = await deleteTrip(event.target.id);
   let trips = tripList.result;
   trips = JSON.parse(trips);
-  rebuildTripsUiSection(trips);
+  rebuildTripsUiSection(trips, false);
 }
 
 function removeCurrentTripFromUi() {
@@ -119,8 +119,10 @@ function removeAllTripsFromUi() {
   }
 }
 
-function rebuildTripsUiSection(trips) {
-  removeCurrentTripFromUi();
+function rebuildTripsUiSection(trips, preserveCurrentTrip) {
+  if (preserveCurrentTrip) {
+    removeCurrentTripFromUi();
+  }
   removeAllTripsFromUi();
   for (let i = 0; i < trips.length; i++) {
     let trip1 = Object.assign(new Trip(), trips[i]);
