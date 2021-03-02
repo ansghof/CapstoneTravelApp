@@ -1,6 +1,6 @@
 import { handleSubmit } from "./js/formHandler";
-import { isValidDate } from "./js/isValidDate";
 import { createResultElement } from "./js/uiElementCreator";
+import { isValidDate } from "./js/isValidDate";
 import "./styles/resets.scss";
 import "./styles/base.scss";
 import "./styles/footer.scss";

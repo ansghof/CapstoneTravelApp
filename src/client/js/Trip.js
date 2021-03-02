@@ -22,11 +22,11 @@ export class Trip {
       this.weather.push(weather);
       console.log("weather from " + weather.date + " added.");
     } else {
-      console.log(
-        "weather from " +
-          weather.date +
-          " not added because it is outside the trip."
-      );
+      // console.log(
+      //   "weather from " +
+      //     weather.date +
+      //     " not added because it is outside the trip."
+      // );
     }
   }
 

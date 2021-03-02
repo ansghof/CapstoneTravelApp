@@ -1,7 +1,7 @@
 import { isValidDate } from "./isValidDate";
 import { createResultElement } from "./uiElementCreator";
 import { Trip } from "./Trip.js";
-export { handleSubmit };
+export { handleSubmit, getCurrentTrip };
 
 const spinner = document.getElementById("spinner");
 
@@ -91,4 +91,8 @@ function createTrip(startDate, imageData, weatherData) {
     });
   }
   return trip;
+}
+
+function getCurrentTrip() {
+  return currentTrip;
 }

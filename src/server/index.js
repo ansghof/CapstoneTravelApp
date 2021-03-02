@@ -21,6 +21,7 @@ const tripList = [];
 console.log(__dirname);
 
 app.get("/", function(req, res) {
+  res.status = 200;
   res.sendFile("dist/index.html");
 });
 
@@ -57,13 +58,45 @@ app.get("/cityimage", async function(req, res) {
     city: decodeURIComponent(req.query.city),
     apikey: process.env.PIXABAY_API_KEY
   });
-  console.log(imageData);
   res.status = 200;
   res.send(imageData);
 });
 
 app.post("/trip", async function(req, res) {
   console.log("::POST Trip::");
-  tripList.add(req.body);
+  tripList.push(req.body);
   console.log(tripList);
+  res.status = 200;
+  res.send({
+    result: JSON.stringify(tripList)
+  });
+});
+
+app.get("/trips", async function(req, res) {
+  console.log("::GET Trips::");
+  console.log(tripList);
+  res.status = 200;
+  res.send({
+    result: JSON.stringify(tripList)
+  });
+});
+
+app.delete("/trip", async function(req, res) {
+  console.log("::Delete Trip::");
+  console.log(tripList.length);
+  const idForDeletion = req.query.id;
+  if (idForDeletion > tripList.length) {
+    res.status = 404;
+    console.log(
+      "index not found in trip list. Prey to the deity of your choice and retry."
+    );
+  } else {
+    tripList.splice(req.query.id, 1);
+    res.status = 200;
+  }
+  console.log(tripList.length);
+  console.log(tripList);
+  res.send({
+    result: JSON.stringify(tripList)
+  });
 });
