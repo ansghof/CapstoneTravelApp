@@ -1,7 +1,9 @@
 export { isValidDate };
 
 function isValidDate(inputText) {
-  let selectedDate = Date.parse(inputText);
+  let selectedDate;
+  selectedDate = Date.parse(inputText);
+
   let result = {
     valid: true,
     message: "date check successful"

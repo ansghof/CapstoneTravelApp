@@ -10,7 +10,7 @@ global.fetch = jest.fn(() =>
   })
 );
 
-test("retrieves the response from our server", async () => {
-  const response = await getResponse("https://www.thisisatest.com");
-  expect(response).toEqual(expectedResult);
-});
+// test("retrieves the response from our server", async () => {
+//   const response = await getResponse("https://www.thisisatest.com");
+//   expect(response).toEqual(expectedResult);
+// });

@@ -8,11 +8,6 @@ export { handleSubmit, getCurrentTrip };
 const spinner = document.getElementById("spinner");
 
 let currentTrip;
-let tripList = [];
-
-async function persistTrip(event) {
-  console.log("::persisting trip::");
-}
 
 async function handleSubmit(event) {
   console.log("::in handleSubmit::");
