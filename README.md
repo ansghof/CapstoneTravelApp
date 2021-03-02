@@ -1,9 +1,36 @@
-# Natural Language Processing App
+# Travel App
 
-This app will send your link to an API to analyze the contents and will display the analysis result.
+The travel app allows users to input a destination and a date. It will provide a scenic image of the location together with the weather conditions at arrival.
+All trips are assumed to be one day length.
 
-## Get Up and Running
+## Usage
 
-blabla
+Enter a location in the text field, choose a date from the date picker. Hit search.
 
-# CapstoneTravelApp
+## How it works
+
+The app consists of two parts. A client and a server.
+
+### Server
+
+The server of this app is responsible for the api calls to retrieve the geolocation of the destination, the weather there and also the image.
+For this, the server offers the endpoints `/weather` and `/cityimage`. When weather is called, the server will first request the geolocation,
+then the weather and will return it to the caller.
+
+#### Installation
+
+The server requires three API keys which have to be located in the `.env` file in the root of the project. A template for this file is checked into
+the repository. `cp .env.template .env`and add your API-keys into the file.
+
+#### Startup
+
+Run `node src/server/server.js` from the project root to start the server. It will run at [localhost](http://127.0.0.1:8081) by default.
+
+### Client
+
+The client can be started from the dev server using `npm run build-dev`. It will automatically start the browser and load the page. Make sure the server
+is running.
+
+## Tests
+
+Testing was done for several functions, including those of the Trip-class. To run the tests, use `npm run test`.
