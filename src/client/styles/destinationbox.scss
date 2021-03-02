@@ -11,8 +11,9 @@
     padding-left: 40px;
     .trip-destination-background {
       padding: 10px;
-      width: 700px;
-      height: 300px;
+      width: 300px;
+      height: 200px;
+
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 4px;
@@ -20,7 +21,7 @@
         font-size: 30px;
       }
       .weatherIcon {
-        margin-top: 10px;
+        margin-top: 50px;
         width: 50px;
         height: 50px;
         background-size: cover;
@@ -30,6 +31,7 @@
 }
 
 .add-button {
+  margin-top: 50px;
   box-shadow: inset 0px 1px 6px 3px #caefab;
   background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
   background-color: #77d42a;
@@ -54,6 +56,7 @@
   }
 }
 .remove-button {
+  margin-top: 50px;
   box-shadow: inset 0px 1px 0px 0px #f29c93;
   background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
   background-color: #fe1a00;
@@ -75,5 +78,34 @@
   &:active {
     position: relative;
     top: 1px;
+  }
+}
+
+@media (min-width: 650px) {
+  #trips-area {
+    .trip {
+      .trip-destination-background {
+        width: 700px;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 4px;
+        .trip-destination {
+          font-size: 30px;
+        }
+        .weatherIcon {
+          margin-top: 10px;
+          width: 50px;
+          height: 50px;
+          background-size: cover;
+        }
+      }
+    }
+  }
+  .add-button {
+    margin-top: 0px;
+  }
+  .remove-button {
+    margin-top: 0px;
   }
 }
