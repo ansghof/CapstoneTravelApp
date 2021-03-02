@@ -28,8 +28,12 @@ Run `node src/server/server.js` from the project root to start the server. It wi
 
 ### Client
 
+The client is the webpage which is used to plan trips.
+
+#### Startup
+
 The client can be started from the dev server using `npm run build-dev`. It will automatically start the browser and load the page. Make sure the server
-is running.
+is running. If the server doesn't run, CORS errors will show up in the browser's dev tools.
 
 ## Tests
 
