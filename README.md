@@ -24,7 +24,7 @@ the repository. `cp .env.template .env`and add your API-keys into the file.
 
 #### Startup
 
-Run `node src/server/server.js` from the project root to start the server. It will run at [localhost](http://127.0.0.1:8081) by default.
+Run `npm start` or `node src/server/server.js` from the project root to start the server. It will run at [localhost](http://127.0.0.1:8081) by default.
 
 ### Client
 
@@ -32,8 +32,9 @@ The client is the webpage which is used to plan trips.
 
 #### Startup
 
-The client can be started from the dev server using `npm run build-dev`. It will automatically start the browser and load the page. Make sure the server
-is running. If the server doesn't run, CORS errors will show up in the browser's dev tools. If the browser doesn't open, the dev-server usually [runs here](http://127.0.0.1:8080).
+There are two ways to start the client. Either with the server through `npm start` (see above) or the client can be started from the dev server using `npm run build-dev`. It will automatically start the browser and load the page. Make sure the server is running. If the server doesn't run, CORS errors will show up in the browser's dev tools. If the browser doesn't open, the dev-server usually [runs here](http://127.0.0.1:8080).
+
+The normal way of starting the applicatoin (client and server) is through `npm start`. This should startup the client and server at [localhost](http://127.0.0.1:8081).
 
 ## Tests
 
